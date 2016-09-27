@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>位置</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			line-height: 1.5;
+		}
+		.box {
+			margin: 20px;
+			color: #fff;
+			background: green;
+			padding: 10px;
+		}
+		.clear{
+			clear: both;
+		}
+		.box-position{
+			position: relative;
+			width: 300px;
+			height: 200px;
+			background: #efefef;
+		}
+		.box-absolute{
+			position: absolute;
+			bottom: 10px;
+			right: 30px;
+			width: 200px;
+			padding: 20px;
+			color: #fff;
+			background: #f00;
+		}
+		.box-fixed{
+			position: fixed;
+			bottom: 10px;
+			right: 30px;
+			width: 200px;
+			padding: 20px;
+			color: #fff;
+			background: #f00;
+		}
+		.box-float{
+			overflow: hidden;
+		}
+		.box-float .left{
+			float: left;
+			background: #00f;
+			color: #fff;
+			padding: 10px;
+			margin-right: 10px;
+		}
+		.box-float .right{
+			float: right;
+			background: #00f;
+			color: #fff;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">我是box1，我与四周的间距是用margin控制的</div>
+	
+	
+	<div class="box-float">
+		<div class="left">
+			<p>左边浮动图片</p>
+			<img src="http://placehold.it/350x150" alt="图片">
+		</div>
+		<div class="right">
+			右边浮动内容
+		</div>
+		<div class="middle">
+			<p>君子曰：学不可以已。<br />
+				青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴，不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。<br />
+				故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。
+			</p>
+		</div>
+	</div>
+	<div class="box clear">我是box2</div>
+	<div class="box-position">
+		<p>这是相对定位盒子</p>
+		<div class="box-absolute">我是absolute定位box</div>
+		<div class="box-fixed">我是fixed定位box</div>
+	</div>
+</body>
+</html>
+

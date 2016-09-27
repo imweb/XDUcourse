@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>入门基础</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="hl/style.css"/>
+</head>
+<body>
+	<div id="aside">
+		<header id="header"><h1><a href="index.html">img & background</h1></a></header>
+		<nav id="nav">
+			<ul>
+				<li><a href="img.html">入门基础</a></li>
+				<li><a href="replace.html">图片替换文字</a></li>
+				<li><a href="sprite.html">雪碧图片</a></li>
+				<li><a href="large.html">大背景图片</a></li>
+				<li><a href="media.html">响应式图片</a></li>
+				<li><a href="beauty.html">图片美化</a></li>
+				<li><a href="optimize.html">图片优化</a></li>
+			</ul>
+		</nav>	
+	</div>
+	<div id="container">
+		<section id="main">
+			<h1 class="title">入门基础</h1>
+			<h2 class="guide-title">基础代码</h2>
+<pre name="code" class="html">
+//图片应该含有src和alt属性
+//如果图片宽高确定应设置width和height以避免重排
+&lt;img wdith="" height="" src="" alt="" /&gt;
+
+//html5 figure & figcaption
+&lt;figure&gt;
+    &lt;img src="images/5.jpg" width="310" height="362" /&gt;
+    &lt;figcaption&gt;我是图标标题&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+//响应式图片定义
+&lt;img src="images/m-256.jpg" srcset="images/s-128.jpg 128w, images/m-256.jpg 256w, images/l-512.jpg 512w" sizes="(max-width: 320px) 100vw, 128px" alt=""&gt;
+
+//参考：http://css-tricks.com/video-screencasts/133-figuring-responsive-images/
+</pre>
+
+<pre name="code" class="css">
+//背景图片background-image,background-color,background-position,background-repeat组成
+//最好设置一个默认的背景色，和图片颜色相似或反衬文字色，以避免网络比较慢图片下载超慢情况下出现一片空白
+.class{
+	background:url(...) no-repeat x y #fff;
+}
+//css3多背景图，第一个的层级最高，依次类推，请注意背景色设置在最后一个背景图上，不然会覆盖后面的背景图
+.class{
+	background:url(img1.png) no-repeat x y #fff,url(img2.png) no-repeat x y,url(img3.png) no-repeat x y #fff;
+}
+//css3 linear gradient
+//参考：https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
+
+//css3 radial gradient
+//参考：https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient
+
+//use css3 gradient
+//参考：https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_gradients
+
+//响应式背景图片(image-set)
+//参考：http://cloudfour.com/examples/image-set/
+</pre>
+			<h2 class="guide-title">图片列表</h2>
+			<ul class="item-list">
+				<li><img src="images/1.jpg" width="200" alt="" /></li>
+				<li><img src="images/1.jpg" width="200" alt="" /></li>
+				<li><img src="images/1.jpg" width="200" alt="" /></li>
+				<li><img src="images/1.jpg" width="200" alt="" /></li>
+				<li><img src="images/1.jpg" width="200" alt="" /></li>
+			</ul>
+			<h2 class="guide-title">文章图片</h2>
+			<article class="article">
+				<div class="tac"><img src="images/6.jpg" alt="APIS图片"></div>
+				<div class="fr"><img alt="w3cplus" width="300" src="images/4.jpg"></div>
+				<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+				<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+				<div class="fl"><img alt="w3cplus" src="images/2.jpg"></div>
+				<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+				<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+				<p>吾尝终日而思矣，不如须臾之所学也；吾尝跂而望矣，不如登高之博见也。登高而招，臂非加长也，而见者远；顺风而呼，声非加疾也，而闻者彰。假舆马者，非利足也，而致千里；假舟楫者，非能水也，而绝江河。君子生非异也，善假于物也。</p>
+				<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+				<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+			</article>
+			<h2 class="guide-title">html5 figure</h2>
+			<figure>
+			    <img src="images/5.jpg" width="310" height="362" />
+			    <figcaption>我是图标标题</figcaption>
+			</figure>
+			<h2 class="guide-title">背景图片</h2>
+			<p class="mb20">以下几个demo分别为：常规背景图，多背景图，线性渐变背景图，径向渐变背景图</p>
+			<p class="success mb20">操作成功！</p>
+			<div class="multi-bg mb20"></div>
+			<div class="css3-bg linear-bg"></div>
+			<div class="css3-bg radial-bg"></div>
+			<h2 class="guide-title">参考资料</h2>
+			<ul class="has-style">
+				<li><a href="http://www.w3cplus.com/content/css3-gradient" target="_blank">css3 Gradient</a></li>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_gradients" target="_blank">Using CSS gradients</a></li>
+				<li><a href="http://lea.verou.me/css3patterns/" target="_blank">CSS3 Patterns Gallery</a></li>
+				<li><a href="http://www.colorzilla.com/gradient-editor/" target="_blank">渐变生成工具</a></li>
+			</ul>
+		</section>
+		<footer id="footer">作者：<a href="http://weibo.com/marvin1023
+" target="_blank">结一</a></footer>
+	</div>
+	<script type="text/javascript" src="hl/hl-all.js"></script>
+	<script type="text/javascript">
+		DlHighlight.HELPERS.highlightByName("code", "pre")
+	</script>
+</body>
+</html>

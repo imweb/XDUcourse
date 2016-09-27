@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>demo media</title>
+<style type="text/css">
+	.page-media{
+		padding: 20px 20px 0;
+		margin: 0;
+	}
+	#container{
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.img-max{
+		max-width: 100%;
+		height: auto;
+	}
+	.img-ratio{
+		width: 41.66%;
+		margin-right: 20px;
+		float: left;
+	}
+	.img-ratio img{
+		max-width: 100%;
+	}
+	.img-query{
+		width: 100%;
+	}
+	.srcset-img img{
+		max-width: 100%;
+	}
+	@media screen and (max-width: 560px){
+		.img-query{
+			background: url(images/7-small.jpg) no-repeat center top;
+			height: 143px;
+		}
+	}
+	@media screen and (min-width: 561px) and (max-width: 1024px){
+		.img-query{
+			background: url(images/7-medium.jpg) no-repeat center top;
+			height: 285px;
+		}
+	}
+	@media screen and (min-width: 1025px){
+		.img-query{
+			background: url(images/7.jpg) no-repeat center top;
+			height: 448px;
+		}
+	}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		getImg();
+	}
+	window.onresize = function(){
+		setTimeout(function(){getImg();},100);
+	};
+	function getImg(){
+		var windowWidth = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth,
+			imgJs = document.getElementById('img_js');
+
+		if(windowWidth > 1024){
+			imgJs.src = imgJs.getAttribute('data-large');
+		}else if(windowWidth <= 1024 && windowWidth > 560){
+			imgJs.src = imgJs.getAttribute('data-medium');
+		}else{
+			imgJs.src = imgJs.getAttribute('data-small');
+		}
+	}
+</script>
+</head>
+<body class="page-media">
+	<div id="container">
+		<h2>max-width</h2>
+		<article class="article">
+			<div class="tac"><img class="img-max" src="images/7.jpg" alt="APIS图片" /></div>
+			<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+			<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+			<div class="img-ratio"><img alt="w3cplus" src="images/8.jpg" /></div>
+			<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+			<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+			<p>吾尝终日而思矣，不如须臾之所学也；吾尝跂而望矣，不如登高之博见也。登高而招，臂非加长也，而见者远；顺风而呼，声非加疾也，而闻者彰。假舆马者，非利足也，而致千里；假舟楫者，非能水也，而绝江河。君子生非异也，善假于物也。</p>
+			<p>青，取之于蓝，而青于蓝；冰，水为之，而寒于水。木直中绳，輮以为轮，其曲中规。虽有槁暴（pù），不复挺者，輮使之然也。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+			<p>故不登高山，不知天之高也；不临深溪，不知地之厚也；不闻先王之遗言，不知学问之大也。干、越、夷、貉之子，生而同声，长而异俗，教使之然也。诗曰：“嗟尔君子，无恒安息。靖共尔位，好是正直。神之听之，介尔景福。”神莫大于化道，福莫长于无祸。</p>
+			<p>吾尝终日而思矣，不如须臾之所学也；吾尝跂而望矣，不如登高之博见也。登高而招，臂非加长也，而见者远；顺风而呼，声非加疾也，而闻者彰。假舆马者，非利足也，而致千里；假舟楫者，非能水也，而绝江河。君子生非异也，善假于物也。</p>
+		</article>
+		<h2>srcset</h2>
+		<div class="srcset-img">
+			<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/small.png" srcset="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/large.png 1280w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/medium.png 640w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/small.png 320w" sizes="(min-width: 640px) 60vm, 100vm" alt="hello the world" />
+		</div>
+		<h2>media query，根据屏幕大小设置不同大小的背景图片</h2>
+		<div class="img-query"></div>
+		<h2>image-set</h2>
+		<p><a href="http://cloudfour.com/examples/image-set/" target="_blank">image-set demo</a></p>
+		<h2>js</h2>
+		<img id="img_js" src="images/loading.gif" data-large="images/7.jpg" data-medium="images/7-medium.jpg" data-small="images/7-small.jpg" alt="" />
+	</div>
+</body>
+</html>

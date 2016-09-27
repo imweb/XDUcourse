@@ -1,0 +1,560 @@
+@charset "UTF-8";
+//style scss
+$lte7:               false;
+$articleSytleSwitch: false;
+$printStyleSwitch:   false;
+$lightblue:          #e6f8fd;
+
+@import "D:/sassCore/core/setting";
+$simpleBtnColor:    #fff $orange;
+
+@import "D:/sassCore/base";
+
+*{
+	@extend %box-sizing-border;
+}
+%display-flex{
+	@include display-flex;
+}
+
+//左右对齐
+.justify{
+	@extend %display-flex;
+	@include justify-content(space-between);
+	.justify-right{
+		@include align-self(center);
+	}
+}
+.btn{
+	@extend %simple-btn;
+}
+.demo-title{
+	background-color: $blue;
+	color: #fff;
+	margin-bottom: 20px;
+	padding-left: 10px;
+}
+.booking_info{
+	color: #10A200;
+}
+.price{
+	color:#f60;
+	dfn{
+		color: #333;
+		display: inline-block;vertical-align: 8px;
+		font-family: arial;
+	}
+	b{
+		font-weight: normal;
+		font-size: 24px;
+		margin-right: 5px;
+		margin-left: 3px;
+	}
+}
+/* -------------------------------------------------
+ * layout
+ * -------------------------------------------------
+*/	
+html{
+	height: 100%;
+}
+body{
+	min-height: 100%;
+	@extend %display-flex;
+	@include flex-direction(column);
+}
+#header{
+	background-color:$blue;
+	color: #fff;
+	text-align: center;
+}
+#footer{
+	background-color:#E1DACF;
+	text-align: center;
+}
+#container{
+	@extend %display-flex;
+	padding: 20px 0;
+	@include flex(1);
+	max-width: 1000px;
+	@extend %center-block;
+}
+#main{
+	@include flex(1);
+}
+#main,.aside{
+	padding: 10px;
+}
+.aside{
+	background-color:#EFEFEF;
+	width: 200px;
+}
+#aside_left{
+	@include order(-1);
+	margin-right: 20px;
+}
+#aside_right{
+	margin-left: 20px;
+}
+/* -------------------------------------------------
+ * header & footer
+ * -------------------------------------------------
+*/	
+#header,#footer{
+	padding: 20px;
+}
+#header{
+	h1{
+		font-size: 30px;
+		z-index:5;
+		position: relative;
+		top: 56px;
+		width: 80px;
+		height: 80px;
+		display: inline-block;
+		color: #00A3CF;
+
+		&:before,&:after{
+			content:"";
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			left: 0;
+			top: 4px;
+			z-index:-1;
+			background-color: #fff;
+			border-radius: 40px 0 0 0;
+		}
+		&:after{
+			border-radius: 0 40px 0 0;
+			left: 40px;
+		}
+	}
+} 
+#demo_links{
+	position: absolute;
+	top: 15px;
+	left: 50%;
+	margin-left: -100px;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 50%;
+	overflow: hidden;
+
+	li{
+		position: absolute;
+		left: 50%;
+		top:50%;
+		width: 130px;
+		height: 130px;
+		overflow: hidden;
+		margin-left: -130px;
+		margin-top: -130px;
+		background-color: darken($blue,2%);
+		font-size:20px;
+		@include transform-origin(100% 100%);
+
+
+		&:nth-of-type(1){
+			-webkit-transform: rotate(-1deg) skew(30deg);
+			transform: rotate(-1deg) skew(30deg);
+		}
+		&:nth-of-type(2){
+			-webkit-transform: rotate(60deg) skew(30deg);
+			transform: rotate(60deg) skew(30deg);
+		}
+		&:nth-of-type(3){
+			-webkit-transform: rotate(121deg) skew(30deg);
+			transform: rotate(121deg) skew(30deg);
+		}
+
+		&:hover,
+		&.active{
+			background-color: darken($blue,6%);
+		}
+		a{
+			display: block;
+			position: absolute;
+			top: 20px;
+			left: 12px;
+			line-height: 160px;
+			width: 160px;
+			height: 160px;
+			color:#fff;
+			-webkit-transform:skew(-30deg) rotate(-59deg) ;
+			transform:skew(-30deg) rotate(-59deg);
+		}
+	}
+}
+#footer a{
+	margin: 0 10px;
+}
+/* -------------------------------------------------
+ * vertical page
+ * -------------------------------------------------
+*/	
+#switch{
+	display: none;
+}
+#switch:checked ~ article:nth-of-type(n+3){
+	display: none;
+}
+
+//article
+.page-vertical article{
+	padding: 10px;
+	border-bottom:1px solid #ddd;
+
+	&:last-child{
+		border-bottom:none;
+	}
+	&:nth-of-type(2n){
+		background-color: #f9f9f9;
+		@include skewX(6deg);
+
+		p{
+			@include skewX(-6deg);
+		}
+	}
+	&:nth-of-type(2n+1){
+		background-color: #f9f9f9;
+		@include skewX(-6deg);
+
+		p{
+			@include skewX(6deg);
+		}
+	}
+
+	p{
+		margin-bottom: 20px;
+
+		&:last-child{
+			margin: 0;
+		}
+	}
+}
+
+/* -------------------------------------------------
+ * horizontal page
+ * -------------------------------------------------
+*/	
+.page-horizontal #main{
+	background-color: #ededed;
+	ol{
+		margin-left:25px;
+  		list-style-type: decimal;
+	}
+}
+#aside_left{
+	@include align-self(flex-start);
+}
+.aside-nav{
+	li{
+		background-color: $blue;
+		margin-bottom: 10px;
+		line-height: 30px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&.current,&:hover{
+			a{
+				background-color: darken($blue,10%);
+				font-weight: bold;
+			}
+		}
+	}
+	a{
+		display: block;
+		color: #fff;
+		padding-left: 10px;
+	}
+}
+
+/* -------------------------------------------------
+ * common page
+ * -------------------------------------------------
+*/
+//列表
+.items-list{
+	@extend %display-flex;
+	@include flex-wrap(wrap);
+	margin-bottom: 20px;
+	li{
+		position: relative;
+		overflow: hidden;
+
+		&:hover{
+			.hover{
+				@include translateX(100%);
+			}
+			.title{
+				@include translateX(-100%);
+			}
+		}
+
+	}
+	.hover{
+		position: absolute;
+		left: -100%;
+		top: 0;
+		background-color: rgba(0,0,0,0.5);
+		color:#fff;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		@extend %all-transition;
+
+		strong{
+			margin:22px 0 5px;
+			line-height: 1.8;
+			display: block;
+		}
+
+		span{
+			display: block;
+		}
+	}
+
+	.title{
+		position: relative;
+		display: block;
+		background-color: rgba(0,0,0,0.5);
+		color:#fff;
+		line-height: 24px;
+		font-weight: normal;
+		margin-top: -24px;
+		text-align: center;
+		@extend %all-transition;
+	}
+}
+.items-list-between{
+	@include justify-content(space-between);
+}
+.items-list-around{
+	@include justify-content(space-around);
+	background-color: #f9f9f9;
+	padding: 20px 0;
+}
+
+//图文混排
+.imgtext-h-block{
+	li{
+		@extend %display-flex;
+		padding: 10px 0;
+		border-bottom:1px dashed #ccc;
+
+		&:hover{
+			background-color: #f9f9f9;
+		}
+	}
+	.img-left{
+		width: 60px;
+		margin-right: 10px;
+
+		img{
+			width: 60px;
+			height: 60px;
+		}
+	}
+	.text-right{
+		@include flex(1);
+
+		h3{
+			font-size: 14px;
+			line-height: 1.3;
+			margin-bottom: 5px;
+			@extend %ellipsis;
+		}
+	}
+}
+.mix-list{
+	.mix-item{
+		@extend %display-flex;
+		padding: 10px 0;
+		border-bottom:1px dashed #ccc;
+
+		&:hover{
+			background-color: $lightblue;
+		}
+		
+		.left{
+			width: 130px;
+			margin-right: 15px;
+		}
+		.middle{
+			@include flex(1);
+			h3{
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 1.3;
+				margin-bottom: 10px;
+			}
+		}
+		.right{
+			margin-left: 15px;
+			text-align: right;
+		}
+	}
+}
+.imgtext-h{
+	@extend %display-flex;
+	margin-bottom: 20px;
+	.img-left{
+		width: 300px;
+		margin-right: 20px;
+	}
+	.text-right{
+		@include flex(1);
+		h3{
+			font-size: 14px;
+			line-height: 1.3;
+			margin-bottom: 5px;
+		}
+		.text-bd{
+			min-height: 100px;
+			margin-bottom: 20px;
+		}
+	}
+}
+.imgtext-list-100 {
+	.img-left{
+		width: 50px;
+		margin-right: 10px;
+	}
+	.text-right .text-bd{
+		min-height: 50px;
+	}
+}
+
+//水平垂直居中
+.flex-conter-list{
+	@extend %display-flex;
+	@include justify-content(space-between);
+	margin-bottom: 20px;
+}
+.flex-center{
+	@extend %display-flex;
+	width: 300px;
+	height: 200px;
+	background-color: #f9f9f9;
+	border:1px solid #ccc;
+
+	&:hover{
+		border-color:$blue;
+		box-shadow: 0 0 3px $blue;
+	}
+	.center-inner{
+		margin:auto;
+	}
+}
+.flex-center-300{
+	height: 300px;
+	background-color: #f9f9f9;
+}
+
+.item-list-200{
+	li{
+		width: 200px;
+	}
+	.flex-center-img{
+		@extend %display-flex;
+		border:1px solid #ccc;
+		width: 200px;
+		height: 200px;
+		
+		img{
+			margin:auto;
+			max-width: 190px;
+			max-height:190px;
+		}
+	}
+}
+
+//justify
+.justify-tabs{
+	border-bottom:3px solid $blue;
+	margin-bottom: 20px;
+}
+.tabs-arrow{
+	@extend %display-flex;
+	span{
+		font-size: 16px;
+		font-weight: bold;
+		margin-right: 10px;
+		padding: 0 10px;
+		line-height: 30px;
+		position: relative;
+		cursor: pointer;
+
+		&.active,&:hover{
+			color:$blue;
+			&:after{
+				position: absolute;
+				left: 50%;
+				margin-left: -5px;
+				bottom: -8px;
+				content: "";
+				width: 4px;
+				height: 4px;
+				background-color: #fff;
+				border:3px solid $blue;
+				border-color:$blue #fff #fff $blue;
+				@include rotate(45deg);
+			}
+		}
+	}
+}
+.depart-city{
+	position: relative;
+	cursor: pointer;
+
+	.city-selected{
+		&:after{
+			content:"";
+			width: 0;
+			height: 0;
+			border-top:5px solid #ccc;
+			border-left:5px solid transparent;
+			border-right:5px solid transparent;
+			margin-left: 5px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	.city-list{
+		position: absolute;
+		display: none;
+	}
+}
+
+//tabs
+.tabs-color{
+	@extend %display-flex;
+	border-bottom:1px solid #ccc;
+	margin-bottom: 20px;
+
+	a{
+		line-height: 30px;
+		background-color: #ccc;
+		margin-right: 10px;
+		padding: 0 10px;
+	}
+} 
+
+//table
+.flex-table{
+	font-size: 12px;
+	.tr{
+		@extend %display-flex;
+		border-bottom:1px dashed #ccc;
+
+		> div{
+			padding: 10px;
+		}
+	}
+	.th{
+		font-weight: bold;
+		width: 100px;
+	}
+}

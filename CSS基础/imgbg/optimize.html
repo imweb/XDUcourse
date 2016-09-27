@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片优化</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="hl/style.css"/>
+</head>
+<body>
+	<div id="aside">
+		<header id="header"><h1><a href="index.html">img & background</h1></a></header>
+		<nav id="nav">
+			<ul>
+				<li><a href="img.html">入门基础</a></li>
+				<li><a href="replace.html">图片替换文字</a></li>
+				<li><a href="sprite.html">雪碧图片</a></li>
+				<li><a href="large.html">大背景图片</a></li>
+				<li><a href="media.html">响应式图片</a></li>
+				<li><a href="beauty.html">图片美化</a></li>
+				<li><a href="optimize.html">图片优化</a></li>
+			</ul>
+		</nav>	
+	</div>
+	<div id="container">
+		<section id="main">
+			<h1 class="title">图片优化</h1>
+			<h2 class="guide-title">如何优化</h2>
+			<p>总的来说，图片的优化分为两个方面：一个为图片本身的格式，大小方面的优化，如不同格式webp，png，gif，jpg选择，压缩等；另一个就是对于网络方面的优化，如sprite，base64，延迟加载，DNS等。<a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/image-optimization?hl=zh-cn" target="_blank">谷歌图片优化手册</a></p>
+			<h2 class="guide-title">位图的优化</h2>
+			<ul class="has-style">
+				<li>图像质量要求和图像文件大小决定你用什么格式的图片，用较小的图片文件呈现较好的图像质量。</li>
+				<li>当图片色彩过于丰富且无透明要求时，建议采用jpg格式并保存为较高质量。</li>
+				<li>当图片色彩过于丰富又有透明或半透明要求或阴影效果时，建议采用png24格式，并对IE6进行png8退化（或在不得已情况下使用滤镜）。</li>
+				<li>当图片色彩不太丰富时无论有无透明要求，请采用png8格式，大多数情况下建议采用这种格式。</li>
+				<li>当图片有动画时，只能使用gif格式。</li>
+				<li>你可以使用工具对图片进行再次压缩，但前提是不会影响色彩和透明。这里推荐几个优秀的在线压缩工具：<a href="/marvin1023/standard/blob/master/www.smushit.com/ysmush.it/">Smush.it</a>，<a href="http://jpegmini.com/main/shrink_photo">JPEGmini</a>，<a href="http://tinypng.org/">tiny png</a>
+				</li>
+				<li><a href="http://isux.tencent.com/introduction-of-webp.html">WebP 探寻之路</a></li>
+			</ul>
+			<h2 class="guide-title">矢量图svg</h2>
+			<p>svg可用使你设计的网页可以更加精彩细致，使用简单的文本命令，SVG可实现色彩线性变化、路径、自定义字体、透明效果、滤镜效果等各式常见的图形图像效果。ie9+可直接使用svg创建svg图形</p>
+			<h3>svg优势</h3>
+			<ul class="has-style">
+				<li>SVG 图像可通过文本编辑器来创建和修改</li>
+				<li>SVG 与 JPEG 和 GIF 图像比起来，尺寸更小，且可压缩性更强。</li>
+				<li>SVG 图像可被搜索、索引、脚本化或压缩</li>
+				<li>SVG 是可伸缩的</li>
+				<li>SVG 图像可在任何的分辨率下被高质量地打印</li>
+				<li>SVG 可在图像质量不下降的情况下被放大</li>
+				<li>SVG 可嵌入JavaScript脚本来控制SVG对象</li>
+			</ul>
+			<h3>svg学习资源（先通过svg turorial了解下怎么去创建常见的svg图形，然后理解下svg的viewport，再实战于图标）：</h3>
+			<ul class="has-style">
+				<li><a href="http://www.w3school.com.cn/svg/svg_examples.asp" target="_blank">SVG 实例</a></li>
+				<li><a href="http://tutorials.jenkov.com/svg/rect-element.html">SVG Tutorial</a></li>
+				<li><a href="http://www.zhangxinxu.com/wordpress/2014/08/svg-viewport-viewbox-preserveaspectratio/">理解SVG的viewport,viewBox,preserveAspectRatio</a></li>
+				<li><a href="https://css-tricks.com/svg-symbol-good-choice-icons/">SVG <code>symbol</code> a Good Choice for Icons</a></li>
+				<li><a href="http://isux.tencent.com/16292.html">使用SVG中的Symbol元素制作Icon</a></li>
+				<li><a href="http://jonibologna.com/using-svg-stroke-attributes/">Using SVG stroke Attributes</a></li>
+				<li><a href="https://css-tricks.com/svg-line-animation-works/">How SVG Line Animation Works</a></li>
+			</ul>
+			<h2 class="guide-title">网络方面优化</h2>
+			<ul class="has-style">
+				<li>合理使用雪碧图，可见<a href="sprite.html" target="_blank">雪碧图片</a></li>
+				<li><a href="http://www.zhangxinxu.com/wordpress/2012/04/base64-url-image-%E5%9B%BE%E7%89%87-%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" target="_blank">小tip: base64:URL背景图片与web页面性能优化/JS时候挖过的一些坑</a>（ie8+支持base64）</li>
+				<li><a href="http://stylechen.com/imglazyload2.html" target="_blank">图片延迟加载</a></li>
+			</ul>
+			<h2 class="guide-title">实战demo</h2>
+			<ul class="has-style">
+				<li><a href="demo-svg.html" target="_blank">svg支持demo</a></li>
+			</ul>
+			<h2 class="guide-title">参考资料</h2>
+			<ul class="has-style">
+				<li><a href="http://www.pjhome.net/web/html5/encodeDataUrl.htm" target="_blank">Encode Data URL</a></li>
+				<li><a href="http://hhhhold.com/" target="_blank">hhhhold-在线图片，可定义大小</a></li>
+				<li><a href="http://www.w3cplus.com/css/pure-css-create-faux-image-cropping" target="_blank">纯CSS制作缩略图片</a></li>
+				<li><a href="http://www.w3school.com.cn/svg/index.asp" target="_blank">SVG 教程（左边菜单）</a></li>
+				<li><a href="http://blog.csdn.net/starrow/article/details/12832949" target="_blank">Javascript的新领域——动态图片处理之SVG</a></li>
+				<li><a href="http://svg-edit.googlecode.com/svn/branches/2.4/editor/svg-editor.html">在线svg edit</a></li>
+			</ul>
+		</section>
+		<footer id="footer">作者：<a href="http://weibo.com/marvin1023
+" target="_blank">结一</a></footer>
+	</div>
+	<script type="text/javascript" src="hl/hl-all.js"></script>
+	<script type="text/javascript">
+		DlHighlight.HELPERS.highlightByName("code", "pre")
+	</script>
+</body>
+</html>

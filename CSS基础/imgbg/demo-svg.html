@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>demo svg</title>
+<style type="text/css">
+.demo{
+	width: 1000px;
+	margin: 20px auto;
+}
+</style>
+</head>
+<body>
+<div class="demo">
+<h2>直接svg标签</h2>
+<svg><circle cx="40" cy="40" r="40" fill="red"/></svg>
+<h2>引入svg文件方式</h2>
+<h3>使用img标签</h3>  
+<img src="img.svg" width="300" height="100">   
+<h3>使用embed标签</h3>   
+<embed src="img.svg" width="300" height="100"  
+type="image/svg+xml"  
+pluginspage="http://www.adobe.com/svg/viewer/install/" />   
+<h3>使用iframe标签</h3> 
+<iframe src="img.svg" width="300" height="100" border="0" style="border-width:0">  
+</iframe>  
+<h3>使用object标签</h3> 
+<object data="rect.svg" width="300" height="100" 
+type="image/svg+xml"
+codebase="http://www.adobe.com/svg/viewer/install/" /> 
+</div>
+</body>
+</html>

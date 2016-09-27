@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片美化</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="hl/style.css"/>
+</head>
+<body>
+	<div id="aside">
+		<header id="header"><h1><a href="index.html">img & background</h1></a></header>
+		<nav id="nav">
+			<ul>
+				<li><a href="img.html">入门基础</a></li>
+				<li><a href="replace.html">图片替换文字</a></li>
+				<li><a href="sprite.html">雪碧图片</a></li>
+				<li><a href="large.html">大背景图片</a></li>
+				<li><a href="media.html">响应式图片</a></li>
+				<li><a href="beauty.html">图片美化</a></li>
+				<li><a href="optimize.html">图片优化</a></li>
+			</ul>
+		</nav>	
+	</div>
+	<div id="container">
+		<section id="main">
+			<h1 class="title">图片美化</h1>
+			<h2 class="guide-title">能做什么美化</h2>
+			<p>在css3未出现之前，图片的美化更多的应该是设计把图片设计好，我们能做的就是搞个边框什么的，少得可怜。当然css3的出现为图片美化增加了各种可能，包括圆角(border-radius)，阴影(box-shadow)，旋转(transform)，滤镜效果，动画，裁剪，遮罩等。这么一来那就是你的心有多大，舞台就有多大了。</p>
+			<h2 class="guide-title">实战demo</h2>
+			<p class="mb20">都是些比较简单的实例，分别为边框，圆角，阴影，滤镜，动画，装饰效果</p>
+			<div class="demo-beauty">
+				<figure class="img-border"><img src="images/2.jpg" alt="" /><figcaption>边框</figcaption></figure><br />
+				<figure class="img-radius"><img src="images/2.jpg" alt="" /><figcaption>圆角</figcaption></figure><br />
+				<figure class="img-shadow"><img src="images/2.jpg" alt="" /><figcaption>阴影</figcaption></figure><br />
+				<figure class="img-filter"><img src="images/2.jpg" alt="" /><figcaption>滤镜（webkit）</figcaption></figure><br />
+				<figure class="img-transition"><img src="images/2.jpg" alt="" /><figcaption>动画</figcaption></figure><br />
+				<figure class="img-decoration"><img src="images/2.jpg" alt="" /><figcaption>装饰</figcaption></figure><br />
+				<figure class="img-effects"><img src="images/2.jpg" alt="" /><figcaption>特效</figcaption></figure><br />
+				<figure class="img-clip"><img src="images/2.jpg" alt="" /><figcaption>裁剪</figcaption></figure><br />
+				<figure class="img-mask"><img src="images/2.jpg" alt="" /><figcaption>遮罩</figcaption></figure>
+			</div>
+			<h2 class="guide-title">参考资料</h2>
+			<ul class="has-style">
+				<li><a href="http://www.w3cplus.com/css3/ten-effects-with-css3-filter">CSS3 Filter的十种特效</a></li>
+				<li><a href="http://alloyteam.github.io/AlloyPhoto/">AlloyImage 步入web图像处理时代</a></li>
+				<li><a href="https://css-tricks.com/clipping-masking-css/">Clipping and Masking in CSS</a></li>
+				<li><a href="http://bennettfeely.com/clippy/">clippy</a></li>
+			</ul>
+		</section>
+		<footer id="footer">作者：结一</footer>
+	</div>
+	<script type="text/javascript" src="hl/hl-all.js"></script>
+	<script type="text/javascript">
+		DlHighlight.HELPERS.highlightByName("code", "pre")
+	</script>
+</body>
+</html>
