@@ -1,0 +1,13 @@
+html * {
+	font-size: 20px;
+}
+
+.content {
+	text-align: center;
+	padding: 50px;
+	line-height: 50px;
+}
+
+.content span {
+	padding-right: 20px;
+}

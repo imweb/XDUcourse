@@ -1,0 +1,10 @@
+实现一个简单的web服务器，支持静态资源缓存和动态请求的session。
+1.用该web服务器运行第一章做的网页来验证静态资源缓存。
+2.做一个登入页验证动态请求的session，输入账号密码登入成功后显示账号​。
+3.使用Node.js实现，除Node.js核心库外不要引入其他现有框架。
+
+参考资料：
+1.Node.js服务器编程 https://nodejs.org/api/http.html#http_http_createserver_requestlistener
+
+
+目的：通过实践对http协议和浏览器缓存机制有更直观的认识，了解web服务是如何运作的
